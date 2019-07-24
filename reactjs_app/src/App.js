@@ -9,7 +9,7 @@ class App extends React.Component {
     this.state = {
       year: d.getFullYear(),
       month: months[d.getMonth()],
-      day: d.getDay(),
+      day: d.getDate(),
       hour: d.getHours(),
       minutes: d.getMinutes(),
       seconds: d.getSeconds()
@@ -21,7 +21,7 @@ class App extends React.Component {
     this.setState({
       year: d.getFullYear(),
       month: months[d.getMonth()],
-      day: d.getDay(),
+      day: d.getDate(),
       hour: d.getHours(),
       minutes: d.getMinutes(),
       seconds: d.getSeconds()
