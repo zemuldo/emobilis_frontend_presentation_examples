@@ -33,6 +33,7 @@ class App extends React.Component {
       <div class="container">
         <div class="header-section">
             <div class="header-frame">
+              <h1>{this.props.name}</h1>
               <span>{month} {day}, {year} {hour}:{minutes}:{seconds}</span>
               <br/>
               <br/>
