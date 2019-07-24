@@ -10,7 +10,7 @@
       <div class="header-section">
         <div id="clock" class="header-frame">
           <h1 id="name">{{ name }}</h1>
-          <span 
+          <span
             >{{ month }} {{ day }}, {{ year }} {{ hour }}:{{ minutes }}:{{
               seconds
             }}</span
@@ -63,15 +63,26 @@
         methods: {
           refresh: function(e) {
             e.preventDefault();
-            var d = new Date()
-            this.year = d.getFullYear(),
-            this.month = months[d.getMonth()],
-            this.day = d.getDate(),
-            this.hour = d.getHours(),
-            this.minutes = d.getMinutes(),
-            this.seconds = d.getSeconds()
+            var d = new Date();
+            (this.year = d.getFullYear()),
+              (this.month = months[d.getMonth()]),
+              (this.day = d.getDate()),
+              (this.hour = d.getHours()),
+              (this.minutes = d.getMinutes()),
+              (this.seconds = d.getSeconds());
           }
-        }
+        },
+        // created: function() {
+        //   setInterval(()=> {
+        //     var d = new Date();
+        //     (this.year = d.getFullYear()),
+        //       (this.month = months[d.getMonth()]),
+        //       (this.day = d.getDate()),
+        //       (this.hour = d.getHours()),
+        //       (this.minutes = d.getMinutes()),
+        //       (this.seconds = d.getSeconds());
+        //   }, 100);
+        // }
       });
     </script>
   </body>
