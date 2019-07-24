@@ -12,4 +12,3 @@ populateDate();
 $("#refresh").click(function(){
     populateDate();
 });
-
