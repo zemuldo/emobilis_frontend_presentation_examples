@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Vue App</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header-section">
+        <div id="clock" class="header-frame">
+          <h1 id="name">{{ name }}</h1>
+          <span 
+            >{{ month }} {{ day }}, {{ year }} {{ hour }}:{{ minutes }}:{{
+              seconds
+            }}</span
+          >
+          <br />
+          <br />
+          <button v-on:click="refresh" id="refresh">Refresh</button>
+        </div>
+        <br />
+      </div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js"></script>
+
+    <script>
+      var months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ];
+      new Vue({
+        el: "#name",
+        data() {
+          return {
+            name: "Awesome Clock"
+          };
+        }
+      });
+      new Vue({
+        el: "#clock",
+        data() {
+          d = new Date();
+          return {
+            year: d.getFullYear(),
+            month: months[d.getMonth()],
+            day: d.getDate(),
+            hour: d.getHours(),
+            minutes: d.getMinutes(),
+            seconds: d.getSeconds()
+          };
+        },
+        methods: {
+          refresh: function(e) {
+            e.preventDefault();
+            var d = new Date()
+            this.year = d.getFullYear(),
+            this.month = months[d.getMonth()],
+            this.day = d.getDate(),
+            this.hour = d.getHours(),
+            this.minutes = d.getMinutes(),
+            this.seconds = d.getSeconds()
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
