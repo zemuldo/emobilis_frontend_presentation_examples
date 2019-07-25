@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf 8" />
+    <title>Angular</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body ng-app="app">
+    <div class="container">
+      <div class="header-section">
+        <div ng-controller="ClockController" class="header-frame">
+          <h1 id="name">{{ name }}</h1>
+          <span
+            >{{ month }} {{ day }}, {{ year }} {{ hour }}:{{ minutes }}:{{
+              seconds
+            }}</span
+          >
+          <br />
+          <br />
+          <button ng-click="refresh()">Refresh</button>
+        </div>
+        <br />
+      </div>
+    </div>
+    <script src="https://code.angularjs.org/1.6.9/angular.js"></script>
+    <script>
+      var months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ];
+      angular
+        .module("app", [])
+        .controller("ClockController", function($scope, $interval) {
+          var d = new Date();
+          $scope.year = d.getFullYear();
+          $scope.month = months[d.getMonth()];
+          $scope.day = d.getDate();
+          $scope.hour = d.getHours();
+          $scope.minutes = d.getMinutes();
+          $scope.seconds = d.getSeconds();
+          $scope.name = "Awesome Clock";
+          $scope.refresh = () => {
+            var d = new Date();
+            $scope.year = d.getFullYear();
+            $scope.month = months[d.getMonth()];
+            $scope.day = d.getDate();
+            $scope.hour = d.getHours();
+            $scope.minutes = d.getMinutes();
+            $scope.seconds = d.getSeconds();
+            $scope.name = "Awesome Clock";
+          };
+        //   $interval(function() {
+        //     $scope.refresh();
+        //   }, 100);
+        });
+    </script>
+  </body>
+</html>

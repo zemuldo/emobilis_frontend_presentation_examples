@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Vue App</title>
+    <title>Vue</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
 
@@ -64,12 +64,12 @@
           refresh: function(e) {
             e.preventDefault();
             var d = new Date();
-            (this.year = d.getFullYear()),
-              (this.month = months[d.getMonth()]),
-              (this.day = d.getDate()),
-              (this.hour = d.getHours()),
-              (this.minutes = d.getMinutes()),
-              (this.seconds = d.getSeconds());
+            this.year = d.getFullYear()
+            this.month = months[d.getMonth()]
+            this.day = d.getDate(),
+            this.hour = d.getHours(),
+            this.minutes = d.getMinutes(),
+            this.seconds = d.getSeconds();
           }
         },
         // created: function() {
